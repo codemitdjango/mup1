@@ -34,7 +34,7 @@ public class GeometrischeObjekte {
 
     public void ausgeben() {
         for (GeometricObject object : liste) {
-            System.out.println("Gesamtes Volumen = " + berechneGesamtesVolumen() + ", Gesamte Oberfläche = " + berechneGesamteOberflaeche());
+            System.out.println(object.toString());
         }
     }
 }
