@@ -1,8 +1,8 @@
-public class GeometricObjectException extends java.lang.Exception {
+public class GeometricObjectException extends Exception {
     public GeometricObjectException() {
-
+        super();
     }
     public GeometricObjectException(String message) {
-
+        super("GeometricObject: " + message);
     }
 }

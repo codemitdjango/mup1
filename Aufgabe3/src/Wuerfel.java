@@ -2,20 +2,21 @@
  * (C) 2022, 2023
  *     Dr. Dirk Zeckzer, Leipzig University, Institut für Informatik
  */
-package serie3;
 
 /**
  *
  * @author Dr. Dirk Zeckzer
  */
-public class Wuerfel {
+public class Wuerfel implements GeometricObject{
 
     private double side;
 
-    public Wuerfel(
-        double side
-    ) {
-        this.side = side;
+    public Wuerfel(double side) throws GeometricObjectException{
+        if(side >= 0){
+            this.side = side;
+        } else {
+            throw new GeometricObjectException("Würfel: Parameter Side < 0; Wert: " + side);
+        }
     }
 
     public double getSide() {
@@ -32,9 +33,9 @@ public class Wuerfel {
 
     @Override
     public String toString() {
-        return "W\u00fcrfel mit"
+        return "Würfel mit"
                + " A = " + this.getSide()
                + ", Volumen = " + this.getVolumen()
-               + ", Oberfl\u00e4che = " + this.getOberflaeche();
+               + ", Oberfläche = " + this.getOberflaeche();
     }
 }
